@@ -1,0 +1,43 @@
+﻿@model BookStore.Models.Book
+@{
+    ViewBag.Title = "addbook";
+}
+
+<h2>Addbooking</h2>
+@using (Html.BeginForm("Addbookconfirm", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.Label(" Name")
+    @Html.EditorFor(model => model.bname)
+    @Html.ValidationMessageFor(model => model.bname)
+    <br />    <br />
+    @Html.Label("Author")
+    @Html.EditorFor(model => model.author)
+    @Html.ValidationMessageFor(model => model.author)
+    <br />    <br />
+    @Html.Label("Edition")
+    @Html.EditorFor(model => model.edition)
+    @Html.ValidationMessageFor(model => model.edition)
+    <br />    <br />
+    @Html.Label("Price")
+    @Html.EditorFor(model => model.price)
+    @Html.ValidationMessageFor(model => model.price)
+    <br />    <br />
+    @Html.Label("Stock")
+    @Html.EditorFor(model => model.stock)
+    @Html.ValidationMessageFor(model => model.stock)
+    <br />    <br />
+
+    @Html.Label("Discount")
+    @Html.EditorFor(model => model.discount)
+    @Html.ValidationMessageFor(model => model.discount)
+    <br />    <br />
+
+   
+
+    @* Name <input type="text" name="Name" />*@
+    <input type="submit" value="AddBook" id="subbtn" onclick="check" />
+}
+

@@ -1,0 +1,27 @@
+﻿@model BookStore.Models.Book
+@{
+    ViewBag.Title = "updatebooking";
+}
+
+<h2>updatebooking</h2>
+
+
+<h2>update</h2>
+<form action="/Home/updatebookconfirm//@Model.BId" method="post">
+    Name <input type="text" value="@Model.bname" name="t1" />
+    <br />    <br />
+   Author <input type="text" value="@Model.author" name="t2" />
+    <br />    <br />
+    Edition <input type="text" value="@Model.edition" name="t3" />
+    <br />    <br />
+    Price <input type="text" value="@Model.price" name="t4" />
+    <br />    <br />
+    Stock <input type="text" value="@Model.stock" name="t5" />
+    <br />    <br />
+    Discount <input type="text" value="@Model.discount" name="t6" />
+    <br />    <br />
+
+    <input type="submit" value="Update Book" />
+
+
+</form>

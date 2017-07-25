@@ -1,0 +1,42 @@
+﻿@model List<BookStore.Models.Book>
+@{
+    ViewBag.Title = "showbook";
+}
+
+
+<h2>show books</h2>
+
+<table style="width:100%">
+    <tr>
+
+        <td>Name</td>
+        <td>Author  </td>
+        <td>Edition </td>
+        <td>Price </td>
+        <td>Stock </td>
+        <td>Discount </td>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.bname</td>
+
+            <td>@s.author</td>
+            <td>@s.edition</td>
+            <td>@s.price</td>
+            <td>@s.stock</td>
+            <td>@s.discount</td>
+            
+            <td>
+        <a href="/Home/updatebook/@s.BId">Update</a>
+        <a href="/Home/deletebook/@s.BId">Delete</a>
+    </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Home/addbook">Insert</a>
+<br />    <br />
+
+
